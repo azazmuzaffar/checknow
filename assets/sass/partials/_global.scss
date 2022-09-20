@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: url("../../assets/images/bg.svg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  font-family: "Montserrat";
+  background-size: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section,
+.slide,
+.fp-tableCell {
+  height: 100vh;
+}
+
+/* Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+/* IE, Edge add Firefox */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.backgrounds {
+  .one {
+    svg {
+      position: fixed;
+      left: 18.5%;
+      top: -35%;
+      z-index: -99;
+      transform: scale(1.09);
+      @media only screen and (max-width: 1600px) {
+        left: 13%;
+      }
+    }
+  }
+  .two {
+    position: fixed;
+    z-index: -9;
+    top: -17%;
+    left: 14%;
+    width: 100%;
+    width: 1744px;
+    height: 1653px;
+    background: url("../../assets/images/outer.png") center center no-repeat, url("../../assets/images/inner-circle.svg") center center no-repeat;
+    background-size: 1653px auto, auto;
+    animation: rotation 120s infinite linear;
+    @media only screen and (max-width: 768px) {
+      width: 1191px !important;
+      height: 1129px !important;
+      background-size: 1129px auto, 0px !important;
+      top: -5%;
+      left: -63%;
+    }
+    &.anime-home {
+      @media only screen and (max-width: 1600px) {
+        width: 1638px;
+        height: 1553px;
+        background-size: 1553px auto, auto;
+      }
+      animation: rotation 120s infinite linear, fadeinout 1s linear forwards;
+    }
+    &.anime-about {
+      background-size: 1753px auto, auto;
+      top: 11%;
+      right: unset;
+      left: -50%;
+      animation: rotation 120s infinite linear, fadetop 0.5s ease-out;
+      z-index: 9;
+      @media only screen and (max-width: 1600px) {
+        top: 16%;
+        left: -53%;
+      }
+      @media only screen and (max-width: 768px) {
+        top: 20%;
+        left: -210% !important;
+        z-index: -9;
+        animation: rotation 120s infinite linear, fadetotop 0.5s ease-out;
+      }
+      @keyframes fadetotop {
+        from {
+          opacity: 0;
+          top: 100%;
+        }
+        to {
+          opacity: 1;
+          top: 20%;
+        }
+      }
+    }
+    &.anime-projects {
+      background-size: 1753px auto, auto;
+      top: 50%;
+      right: unset;
+      left: -15%;
+      animation: rotation 120s infinite linear, fadedown 0.5s ease-out;
+      transition: 1s;
+      z-index: 9;
+      @media only screen and (max-width: 1600px) {
+        top: 55%;
+        left: -16.3%;
+      }
+      @media only screen and (max-width: 768px) {
+        width: 928px !important;
+        height: 880px !important;
+        background-size: 880px auto, 0px !important;
+        top: 57%;
+        left: -60.3%;
+        z-index: -9;
+      }
+    }
+    &.anime-team {
+      background-size: 1753px auto, auto;
+      top: 20%;
+      left: 30%;
+      transition: 1s;
+      z-index: 9;
+      @media only screen and (max-width: 1600px) {
+        top: 25%;
+        left: 35%;
+      }
+      @media only screen and (max-width: 768px) {
+        width: 1105px !important;
+        height: 1048px !important;
+        background-size: 1048px auto, 0px !important;
+        left: -40%;
+        z-index: -9;
+      }
+    }
+    &.anime-contact {
+      background-size: 1753px auto, auto;
+      top: -22%;
+      left: 22%;
+      transition: 1s;
+      z-index: 9;
+      @media only screen and (max-width: 1600px) {
+        top: -23%;
+        left: 25%;
+      }
+      @media only screen and (max-width: 768px) {
+        width: 1105px !important;
+        height: 1048px !important;
+        background-size: 1048px auto, 0px !important;
+        left: -96%;
+        top: 2.5%;
+        z-index: -9;
+      }
+    }
+  }
+  .three {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: url("../../assets/images/gradients.png");
+    background-repeat: no-repeat;
+    background-position: top 0px left 0;
+    background-size: cover;
+  }
+  .line {
+    width: 60%;
+    margin: 0 auto;
+    height: 1px;
+    position: fixed;
+    z-index: -9 !important;
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 9999;
+    opacity: 0;
+    &.show {
+      animation: fadeinout 1s linear forwards;
+    }
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes fadeinout {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes fadetop {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 11%;
+  }
+}
+@keyframes fadedown {
+  from {
+    opacity: 0;
+    top: 100%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}
